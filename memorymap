@@ -1,0 +1,18 @@
+MEMORY
+{
+	/* Hardcoded 1 MB kernel size */
+    ram : ORIGIN = 0x8000, LENGTH = 1M
+}
+
+SECTIONS
+{
+    .text : { *(.text*) } > ram
+    . = ALIGN(4096); /* align to page size */
+	
+	_bss_start = .;
+	
+    .bss : { *(.bss*) } > ram
+    . = ALIGN(4096); /* align to page size */
+	
+	_bss_end = .;
+}
