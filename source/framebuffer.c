@@ -5,6 +5,11 @@ unsigned int gFbAddr;
 unsigned int gPitch;
 unsigned int gScreenWidth, gScreenHeight;
 
+unsigned int GetFramebufferAddress()
+{
+	return gFbAddr;
+}
+
 
 int InitializeFramebuffer()
 {	

@@ -9,6 +9,9 @@ v0.01 - September 25, 2013
 Initial release.  Code is very slow on the Rpi, and therefore difficult to
 test.  Speed and optimization is the primary focus.
 
+v0.02 - Sept 27,2013
+Add cache code to startup.  Runs slightly faster. 
+
 Credits:
 ========
 CSUD - the USB library for the Rpi was developed by Alex Chadderz.

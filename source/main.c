@@ -45,6 +45,12 @@ int cmain(void)
 {
 	unsigned int result = 0;
 	
+	//Enable cache
+	unsigned int controlRegister;
+	asm volatile ("MRC p15, 0, %0, c1, c0, 0" : "=r" (controlRegister));
+	controlRegister|=0x1800; 
+	asm volatile ("MCR p15, 0, %0, c1, c0, 0" :: "r" (controlRegister));
+	
 	LedInit();
 	
 	if((result = terminal_init()) != 0)

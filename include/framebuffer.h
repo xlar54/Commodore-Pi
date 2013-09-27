@@ -7,4 +7,5 @@ int SetupScreen();
 int GetPitch();
 int InitializeFramebuffer();
 void DisplayVirtualFramebuffer(int bufferId);
+unsigned int GetFramebufferAddress();
 
