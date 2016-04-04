@@ -26,183 +26,183 @@ char * opcodes[256] =
 /*0x00*/ "BRK",
 /*0x01*/ "ORA ($a,X)",
 /*0x02*/ "???",
-/*0x03*/ "??? ($a,X)",
+/*0x03*/ "SLO ($a,X)", /* Undocumented Opcode.  Operation: {$a}:={$a}*2 A:=A or {$a} */
 /*0x04*/ "??? $a",
 /*0x05*/ "ORA $a",
 /*0x06*/ "ASL $a",
-/*0x07*/ "??? $a",
+/*0x07*/ "SLO $a", /* Undocumented Opcode, Operation: {$a}:={$a}*2 A:=A or {$a} */
 /*0x08*/ "PHP",
 /*0x09*/ "ORA #$a",
 /*0x0A*/ "ASL",
-/*0x0B*/ "??? #$a",
+/*0x0B*/ "ANC #$a", /* Undocumented Opcode. Operation: A := A&#{$a} */
 /*0x0C*/ "??? $ba",
-/*0x0D*/ "ORA $ba",
+/*0x0D*/ "ORA $ba", 
 /*0x0E*/ "ASL $ba",
-/*0x0F*/ "??? $ba",
+/*0x0F*/ "SLO $ba", /* Undocumented Opcode. Operation: {$a}:={$a}*2 A:=A or {$a} */
 /*0x10*/ "BPL $*a",
 /*0x11*/ "ORA ($a),Y",
 /*0x12*/ "???",
-/*0x13*/ "??? ($a),Y",
+/*0x13*/ "SLO ($a),Y", /* Undocumented Opcode. Operation: {$a}:={$a}*2 A:=A or {$a} */
 /*0x14*/ "??? $a,X",
 /*0x15*/ "ORA $a,X",
 /*0x16*/ "ASL $a,X",
-/*0x17*/ "??? $a,X",
+/*0x17*/ "SLO $a,X", /* Undocumented Opcode. Operation: {$a,X}:={$a,X}*2 A:=A or {$a} */
 /*0x18*/ "CLC",
 /*0x19*/ "ORA $ba,Y",
 /*0x1A*/ "???",
-/*0x1B*/ "??? $ba,Y",
+/*0x1B*/ "SLO $ba,Y", /* Undocumented Opcode. Operation: {$a}:={$a}*2 A:=A or {$a} */
 /*0x1C*/ "??? $a",
 /*0x1D*/ "ORA $ba,X",
 /*0x1E*/ "ASL $ba,X",
-/*0x1F*/ "??? $ba,X",
+/*0x1F*/ "SLO $ba,X", /* Undocumented Opcode. Operation: {$a}:={$a}*2 A:=A or {$a} */
 /*0x20*/ "JSR $ba",
 /*0x21*/ "AND ($a,X)",
 /*0x22*/ "NOP",
-/*0x23*/ "??? ($a,X)",
+/*0x23*/ "RLA ($a,X)", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x24*/ "BIT $a",
 /*0x25*/ "AND $a",
 /*0x26*/ "ROL $a",
-/*0x27*/ "??? $a",
+/*0x27*/ "RLA $a", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x28*/ "PLP",
 /*0x29*/ "AND #$a",
 /*0x2A*/ "ROL",
-/*0x2B*/ "??? #$a",
+/*0x2B*/ "ANC #$a", /* Undocumented Opcode. Operation: A := A&#{$a} */
 /*0x2C*/ "BIT $ba",
 /*0x2D*/ "AND $ba",
 /*0x2E*/ "ROL $ba",
-/*0x2F*/ "??? $ba",
+/*0x2F*/ "RLA $ba", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x30*/ "BMI $*a",
 /*0x31*/ "AND ($a),Y",
 /*0x32*/ "???",
-/*0x33*/ "??? ($a),Y",
+/*0x33*/ "RLA ($a),Y", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x34*/ "??? $a,X",
 /*0x35*/ "AND $a,X",
 /*0x36*/ "ROL $a,X",
-/*0x37*/ "??? $a,X",
+/*0x37*/ "RLA $a,X", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x38*/ "SEC",
 /*0x39*/ "AND $ba,Y",
 /*0x3A*/ "???",
-/*0x3B*/ "??? $ba,Y",
+/*0x3B*/ "RLA $ba,Y", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x3C*/ "??? $ba,X",
 /*0x3D*/ "AND $ba,X",
 /*0x3E*/ "ROL $ba,X",
-/*0x3F*/ "??? $ba,X",
+/*0x3F*/ "RLA $ba,X", /* Undocumented Opcode. Operation: {$a}:={$a}rol A:=A and {$a} */
 /*0x40*/ "RTI",
 /*0x41*/ "EOR ($a,X)",
 /*0x42*/ "???",
-/*0x43*/ "??? ($a,X)",
+/*0x43*/ "SRE ($a,X)",  /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x44*/ "??? $a",
 /*0x45*/ "EOR $a",
 /*0x46*/ "LSR $a",
-/*0x47*/ "??? $a",
+/*0x47*/ "SRE $a", /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x48*/ "PHA",
 /*0x49*/ "EOR #$a",
 /*0x4A*/ "LSR",
-/*0x4B*/ "??? #$a",
+/*0x4B*/ "ALR #$a", /* Undocumented Opcode. Operation: A:=(A&#{$a})/2 */
 /*0x4C*/ "JMP $ba",
 /*0x4D*/ "EOR $ba",
 /*0x4E*/ "LSR $ba",
-/*0x4F*/ "??? $ba",
+/*0x4F*/ "SRE $ba",  /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x50*/ "BVC $*a",
 /*0x51*/ "EOR ($a),Y",
 /*0x52*/ "???",
-/*0x53*/ "??? ($a),Y",
+/*0x53*/ "SRE ($a),Y", /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x54*/ "??? $a,X",
 /*0x55*/ "EOR $a,X",
 /*0x56*/ "LSR $a,X",
-/*0x57*/ "??? $a,X",
+/*0x57*/ "SRE $a,X", /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x58*/ "CLI",
 /*0x59*/ "EOR $ba,Y",
 /*0x5A*/ "???",
-/*0x5B*/ "??? $ba,Y",
+/*0x5B*/ "SRE $ba,Y", /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x5C*/ "??? $ba,X",
 /*0x5D*/ "EOR $ba,X",
 /*0x5E*/ "LSR $ba,X",
-/*0x5F*/ "??? $ba,X",
+/*0x5F*/ "SRE $ba,X", /* Undocumented Opcode. Operation: {$a}:={$a}/2 A:=A exor {$a} */
 /*0x60*/ "RTS",
 /*0x61*/ "ADC ($a,X)",
 /*0x62*/ "???",
-/*0x63*/ "??? ($a,X)",
+/*0x63*/ "RRA ($a,X)", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x64*/ "??? $a",
 /*0x65*/ "ADC $a",
 /*0x66*/ "ROR $a",
-/*0x67*/ "??? $a",
+/*0x67*/ "RRA $a", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x68*/ "PLA",
 /*0x69*/ "ADC #$a",
 /*0x6A*/ "ROR",
-/*0x6B*/ "??? #$a",
+/*0x6B*/ "ARR #$a", /* Undocumented Opcode. Operation: A:=(A&#{$a})/2 */
 /*0x6C*/ "JMP ($ba)",
 /*0x6D*/ "ADC $ba",
 /*0x6E*/ "ROR $ba",
-/*0x6F*/ "??? $ba",
+/*0x6F*/ "RRA $ba", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x70*/ "BVS $*a",
 /*0x71*/ "ADC ($a),Y",
 /*0x72*/ "???",
-/*0x73*/ "??? ($a),Y",
+/*0x73*/ "RRA ($a),Y", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x74*/ "??? $a,X",
 /*0x75*/ "ADC $a,X",
 /*0x76*/ "ROR $a,X",
-/*0x77*/ "??? $a,X",
+/*0x77*/ "RRA $a,X", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x78*/ "SEI",
 /*0x79*/ "ADC $ba,Y",
 /*0x7A*/ "???",
-/*0x7B*/ "??? $ba,Y",
+/*0x7B*/ "RRA $ba,Y", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x7C*/ "??? $ba,X",
 /*0x7D*/ "ADC $ba,X",
 /*0x7E*/ "ROR $ba,X",
-/*0x7F*/ "??? $ba,X",
+/*0x7F*/ "RRA $ba,X", /* Undocumented Opcode. Operation: {$a}:={$a}ror A:=A adc {$a} */
 /*0x80*/ "??? #$a",
 /*0x81*/ "STA ($a,X)",
 /*0x82*/ "??? #$a",
-/*0x83*/ "??? ($a,X)",
+/*0x83*/ "SAX ($a,X)", /* Undocumented Opcode. Operation: {$a}:=A&X */
 /*0x84*/ "STY $a",
 /*0x85*/ "STA $a",
 /*0x86*/ "STX $a",
-/*0x87*/ "??? $a",
+/*0x87*/ "SAX $a", /* Undocumented Opcode. Operation: {$a}:=A&X */
 /*0x88*/ "DEY",
 /*0x89*/ "??? #$a",
 /*0x8A*/ "TXA",
-/*0x8B*/ "??? #$a",
+/*0x8B*/ "XAA #$a", /* Undocumented Opcode. Operation: A:=X&#{$a} LEF: HIGHLY Unstable, results in unpredictable behavior on some machines. */
 /*0x8C*/ "STY $ba",
 /*0x8D*/ "STA $ba",
 /*0x8E*/ "STX $ba",
-/*0x8F*/ "??? $ba",
+/*0x8F*/ "SAX $ba", /* Undocumented Opcode. Operation: {$a}:=A&X */
 /*0x90*/ "BCC $*a",
 /*0x91*/ "STA ($a),Y",
 /*0x92*/ "???",
-/*0x93*/ "??? ($a),Y",
+/*0x93*/ "AHX ($a),Y", /* Undocumented Opcode. Operation: {$a}:=A&X&H  LEF: Can be unstable on some systems/6502/6510 revisions. */
 /*0x94*/ "STY $a,X",
 /*0x95*/ "STA $a,X",
 /*0x96*/ "STX $a,Y",
-/*0x97*/ "??? $a,Y",
+/*0x97*/ "SAX $a,Y", /* Undocumented Opcode. Operation: {$a}:=A&X */
 /*0x98*/ "TYA",
 /*0x99*/ "STA $ba,Y",
 /*0x9A*/ "TXS",
-/*0x9B*/ "??? $ba,Y",
-/*0x9C*/ "??? $ba,X",
+/*0x9B*/ "TAS $ba,Y", /* Undocumented Opcode. Operation: S:=A&X {$a}:=S&H  LEF: Can be unstable on some systems/6502/6510 revisions. */
+/*0x9C*/ "SHY $ba,X", /* Undocumented Opcode. Operation: {$a}:=Y&H  LEF: Can be unstable on some systems/6502/6510 revisions. */
 /*0x9D*/ "STA $ba,X",
-/*0x9E*/ "??? $ba,Y",
-/*0x9F*/ "??? $ba,Y",
+/*0x9E*/ "SHX $ba,Y", /* Undocumented Opcode. Operation: {$a}:=X&H  LEF: Can be unstable on some systems/6502/6510 revisions. */
+/*0x9F*/ "AHX $ba,Y", /* Undocumented Opcode. Operation: {$a}:=A&X&H  LEF: Can be unstable on some systems/6502/6510 revisions. */
 /*0xA0*/ "LDY #$a",
 /*0xA1*/ "LDA ($a,X)",
 /*0xA2*/ "LDX #$a",
-/*0xA3*/ "??? ($a,X)",
+/*0xA3*/ "LAX ($a,X)", /* Undocumented Opcode. Operation: A,X:={$a} */
 /*0xA4*/ "LDY $a",
 /*0xA5*/ "LDA $a",
 /*0xA6*/ "LDX $a",
-/*0xA7*/ "??? $a",
+/*0xA7*/ "LAX $a", /* Undocumented Opcode. Operation: A,X:={$a} */
 /*0xA8*/ "TAY",
 /*0xA9*/ "LDA #$a",
 /*0xAA*/ "TAX",
-/*0xAB*/ "??? #$a",
+/*0xAB*/ "LAX #$a", /* Undocumented Opcode. Operation: A,X:=#{$a} LEF: HIGHLY Unstable, results in unpredictable behavior on some machines; seems to work on the 8052 Processor. */
 /*0xAC*/ "LDY $ba",
 /*0xAD*/ "LDA $ba",
 /*0xAE*/ "LDX $ba",
-/*0xAF*/ "??? $ba",
+/*0xAF*/ "LAX $ba", /* Undocumented Opcode. Operation: A,X:={$a} */
 /*0xB0*/ "BCS $*a",
 /*0xB1*/ "LDA ($a),Y",
 /*0xB2*/ "???",
-/*0xB3*/ "??? ($a),Y",
+/*0xB3*/ "LAX ($a),Y", /* Undocumented Opcode. Operation: A,X:={$a} */
 /*0xB4*/ "LDY $a,X",
 /*0xB5*/ "LDA $a,X",
 /*0xB6*/ "LDX $a,Y",
@@ -210,75 +210,75 @@ char * opcodes[256] =
 /*0xB8*/ "CLV",
 /*0xB9*/ "LDA $ba,Y",
 /*0xBA*/ "TSX",
-/*0xBB*/ "??? $ba,Y",
+/*0xBB*/ "LAS $ba,Y", /* Undocumented Opcode. Operation: A,X,S:={$a}&S */
 /*0xBC*/ "LDY $ba,X",
 /*0xBD*/ "LDA $ba,X",
 /*0xBE*/ "LDX $ba,Y",
-/*0xBF*/ "??? $ba,Y",
+/*0xBF*/ "LAX $ba,Y", /* Undocumented Opcode. Operation: A,X:={$a} */
 /*0xC0*/ "CPY #$a",
 /*0xC1*/ "CMP ($a,X)",
 /*0xC2*/ "??? #$a",
-/*0xC3*/ "??? ($a,X)",
+/*0xC3*/ "DCP ($a,X)", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xC4*/ "CPY $a",
 /*0xC5*/ "CMP $a",
 /*0xC6*/ "DEC $a",
-/*0xC7*/ "??? $a",
+/*0xC7*/ "DCP $a", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xC8*/ "INY",
 /*0xC9*/ "CMP #$a",
 /*0xCA*/ "DEX",
-/*0xCB*/ "??? #$a",
+/*0xCB*/ "AXS #$a", /* Undocumented Opcode. Operation: X:=A&X-#{$a} */
 /*0xCC*/ "CPY $ba",
 /*0xCD*/ "CMP $ba",
 /*0xCE*/ "DEC $ba",
-/*0xCF*/ "??? $ba",
+/*0xCF*/ "DCP $ba", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xD0*/ "BNE $*a",
 /*0xD1*/ "CMP ($a),Y",
 /*0xD2*/ "???",
-/*0xD3*/ "??? ($a),Y",
+/*0xD3*/ "DCP ($a),Y", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xD4*/ "??? $a,X",
 /*0xD5*/ "CMP $a,X",
 /*0xD6*/ "DEC $a,X",
-/*0xD7*/ "??? $a,X",
+/*0xD7*/ "DCP $a,X", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xD8*/ "CLD",
 /*0xD9*/ "CMP $ba,Y",
 /*0xDA*/ "???",
-/*0xDB*/ "??? $ba,Y",
+/*0xDB*/ "DCP $ba,Y", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xDC*/ "??? $ba,X",
 /*0xDD*/ "CMP $ba,X",
 /*0xDE*/ "DEC $ba,X",
-/*0xDF*/ "??? $ba,X",
+/*0xDF*/ "DCP $ba,X", /* Undocumented Opcode. Operation: {$a}:={$a}-1 A-{$a} */
 /*0xE0*/ "CPX #$a",
 /*0xE1*/ "SBC ($a,X)",
 /*0xE2*/ "??? #$a",
-/*0xE3*/ "??? ($a,X)",
+/*0xE3*/ "ISC ($a,X)", /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 /*0xE4*/ "CPX $a",
 /*0xE5*/ "SBC $a",
 /*0xE6*/ "INC $a",
-/*0xE7*/ "??? $a",
+/*0xE7*/ "ISC $a", /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 /*0xE8*/ "INX",
 /*0xE9*/ "SBC #$a",
 /*0xEA*/ "NOP",
-/*0xEB*/ "??? #$a",
+/*0xEB*/ "SBC #$a", /* Undocumented Opcode. Operation: A:=A-#{$a} */
 /*0xEC*/ "CPX $ba",
 /*0xED*/ "SBC $ba",
 /*0xEE*/ "INC $ba",
-/*0xEF*/ "??? $ba",
+/*0xEF*/ "ISC $ba",  /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 /*0xF0*/ "BEQ $*a",
 /*0xF1*/ "SBC ($a),Y",
 /*0xF2*/ "???",
-/*0xF3*/ "??? ($a),Y",
+/*0xF3*/ "ISC ($a),Y", /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 /*0xF4*/ "??? $a,X",
 /*0xF5*/ "SBC $a,X",
 /*0xF6*/ "INC $a,X",
-/*0xF7*/ "??? $a,X",
+/*0xF7*/ "ISC $a,X", /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 /*0xF8*/ "SED",
 /*0xF9*/ "SBC $ba,Y",
 /*0xFA*/ "???",
-/*0xFB*/ "??? $ba,Y",
+/*0xFB*/ "ISC $ba,Y", /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 /*0xFC*/ "??? $ba,X",
 /*0xFD*/ "SBC $ba,X",
 /*0xFE*/ "INC $ba,X",
-/*0xFF*/ "??? $ba,X"
+/*0xFF*/ "ISC $ba,X" /* Undocumented Opcode. Operation: {$a}:={$a}+1 A:=A-{$a} */
 };
 
 BYTE ORIGINAL64B[8193] =
